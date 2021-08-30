@@ -6,10 +6,6 @@ of a gmane repository using the instructions at:
 
 http://gmane.org/export.php
 
-
-This server will be faster and take a lot of load off the 
-gmane.org server.
-
 You should install the SQLite browser to view and modify the databases from:
 
 http://sqlitebrowser.org/
@@ -25,11 +21,6 @@ its data in a database and can be interrupted and re-started
 as often as needed.   It may take many hours to pull all the data
 down.  So you may need to restart several times.
 
-To give you a head-start, I have put up 600MB of pre-spidered Sakai 
-email here:
-
-https://www.py4e.com/data_space/content.sqlite.zip
-
 If you download this, you can "catch up with the latest" by
 running gmane.py.
 
@@ -42,9 +33,6 @@ to type the following command before running this code:
     chcp 65001
 
 http://stackoverflow.com/questions/388490/unicode-characters-in-windows-command-line-how
-
-Here is a run of gmane.py getting the last five messages of the
-sakai developer list:
 
 Mac: python3 gmane.py 
 Win: gmane.py 
@@ -67,7 +55,7 @@ list.  gmane.py will quickly scan to the end of the already-spidered pages and c
 if there are new messages and then quickly retrieve those messages and add them 
 to content.sqlite.
 
-The content.sqlite data is pretty raw, with an innefficient data model, and not compressed.
+The content.sqlite data is pretty raw, with an inefficient data model, and not compressed.
 This is intentional as it allows you to look at content.sqlite to debug the process.
 It would be a bad idea to run any queries against this database as they would be 
 slow.
@@ -89,8 +77,7 @@ Win: gmodel.py
 The gmodel.py program does a number of data cleaing steps
 
 Domain names are truncated to two levels for .com, .org, .edu, and .net 
-other domain names are truncated to three levels.  So si.umich.edu becomes
-umich.edu and caret.cam.ac.uk becomes cam.ac.uk.   Also mail addresses are
+other domain names are truncated to three levels. Also mail addresses are
 forced to lower case and some of the @gmane.org address like the following
 
    arwhyte-63aXycvo3TyHXe+LvDLADg@public.gmane.org
@@ -119,8 +106,6 @@ organzation does the most"?  This is done using gbasic.py:
 
 Mac: python3 gbasic.py 
 Win: gbasic.py 
-
-How many to dump? 5
 
 You can look at the data in index.sqlite and if you find a problem, you 
 can update the Mapping table and DNSMapping table in content.sqlite and
